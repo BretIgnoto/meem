@@ -20,11 +20,13 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 		if user.save
+			session[:price] = nil
+			session[:package] = nil
 			session[:user_id] = User.last.id
-			redirect_to "/events"			
+			redirect_to "/users/#{session[:user_id]}"			
 		else
 			flash[:errors] = user.errors.full_messages
-			redirect_to :root
+			redirect_to :back
 		end
 	end
 	def show

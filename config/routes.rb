@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'users/login' => 'users#login'
   delete 'users' => 'users#logout'
   post 'users' => 'users#create'
+  get 'users/:id' => 'users#show'
 
   get 'packages' => 'packages#index'
   post 'packages' => 'packages#checkout'
