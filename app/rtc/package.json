@@ -1,0 +1,22 @@
+{
+  "name": "meem",
+  "version": "1.0.0",
+  "description": "\"a simple RT server with socket.io to suport the WebRTC client comunication of data\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BretIgnoto/meem.git"
+  },
+  "author": "Me Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BretIgnoto/meem/issues"
+  },
+  "homepage": "https://github.com/BretIgnoto/meem#readme",
+  "dependencies": {
+    "socket.io": "^1.4.5"
+  }
+}
