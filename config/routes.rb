@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'packages/index'
+  resources :charges
 
   root 'users#index'
   get 'users/login' => 'users#signin'
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'users' => 'users#logout'
   post 'users' => 'users#create'
   get 'users/:id' => 'users#show'
+  patch 'users/:id' => 'users#update'
 
   get 'packages' => 'packages#index'
   post 'packages' => 'packages#checkout'

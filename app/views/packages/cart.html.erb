@@ -11,8 +11,7 @@
 	<input type="password" name="user[password]">
 	<label>Password Confirmation:</label>
 	<input type="password" name="user[password_confirmation]">
-	<label>Package:</label><%=session[:package]%>
-	<input type="hidden" name="user[package]" value="<%=session[:package]%>">
-	<label>Price:</label><%=session[:price]%>
-	<input type="submit" value="Confirm Purchase">
+	<label>Package:</label> <%=session[:package]%>
+	<label>Price:</label> $<%=session[:price]%>.00
+	<input type="submit" value="Continue to Checkout">
 </form>

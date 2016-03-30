@@ -20,12 +20,18 @@ class UsersController < ApplicationController
 	def create
 		user = User.new(user_params)
 		if user.save
-			session[:price] = nil
-			session[:package] = nil
 			session[:user_id] = User.last.id
-			redirect_to "/users/#{session[:user_id]}"			
+			redirect_to "/charges/new"		
 		else
 			flash[:errors] = user.errors.full_messages
+			redirect_to :back
+		end
+	end
+	def update
+		if User.find(params[:id]).update(user_params)
+			flash[:errors] = ["Successfully Update Profile"]
+			redirect_to "/charges/new"
+		else
 			redirect_to :back
 		end
 	end
@@ -34,6 +40,6 @@ class UsersController < ApplicationController
 	end
 	private
 		def user_params
-			params.require(:user).permit(:first_name, :last_name, :email, :package, :password, :password_confirmation)
+			params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
 		end
 end
