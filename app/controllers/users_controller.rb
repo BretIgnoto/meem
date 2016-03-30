@@ -14,7 +14,7 @@ class UserController < ApplicationController
 		end
 	end
 	def logout
-		session[:user_id] = nil
+		reset_session
 		redirect_to :root
 	end
 	def show

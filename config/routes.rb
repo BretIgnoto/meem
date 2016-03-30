@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'packages/index'
+
   root 'users#index'
   get 'users/login' => 'users#signin'
   post 'users' => 'users#login'
   delete 'users' => 'users#logout'
+
+  get 'packages' => 'packages#index'
+  post 'packages' => 'packages#checkout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

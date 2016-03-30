@@ -1,0 +1,15 @@
+<div>
+	<h2>Silver Features</h2>
+	<ul>
+		<li>Advisement</li>
+		<li>Resume</li>
+		<li>Cover Letter</li>
+	</ul>
+	<p>Price: $79</p>
+	<form action="/packages" method="post">
+		<%= token_tag nil %>
+		<input type="hidden" name="package" value="silver">
+		<input type="hidden" name="price" value=79>
+		<input type="submit" value="Purchase">
+	</form>
+</div>
