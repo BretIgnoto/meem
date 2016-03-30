@@ -17,7 +17,21 @@ class UsersController < ApplicationController
 		reset_session
 		redirect_to :root
 	end
+	def create
+		user = User.new(user_params)
+		if user.save
+			session[:user_id] = User.last.id
+			redirect_to "/events"			
+		else
+			flash[:errors] = user.errors.full_messages
+			redirect_to :root
+		end
+	end
 	def show
 		@user = User.find(session[:user_id])
 	end
+	private
+		def user_params
+			params.require(:user).permit(:first_name, :last_name, :email, :package, :password, :password_confirmation)
+		end
 end

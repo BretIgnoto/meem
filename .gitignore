@@ -13,3 +13,4 @@
 /tmp
 
 /config/database.yml
+/layouts/application.html.erb

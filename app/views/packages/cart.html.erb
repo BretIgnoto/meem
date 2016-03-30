@@ -1,6 +1,5 @@
 <h3>Purchase</h3>
 <form action="/users" method="post">
-	<%= token_tag nil %>
 	<label>First Name:</label>
 	<input type="text" name="user[first_name]">
 	<label>Last Name:</label>
@@ -11,8 +10,8 @@
 	<input type="text" name="user[password]">
 	<label>Password Confirmation:</label>
 	<input type="text" name="user[password_confirmation]">
-	<label>Package:</label><%=session[:pacakge]%>
-	<input type="hidden" name="package" value="<%=session[:package]%>">
-	<label>Package:</label><%=session[:price]%>
+	<label>Package:</label><%=session[:package]%>
+	<input type="hidden" name="user[package]" value="<%=session[:package]%>">
+	<label>Price:</label><%=session[:price]%>
 	<input type="submit" value="Confirm Purchase">
 </form>

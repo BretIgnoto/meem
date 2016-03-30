@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   root 'users#index'
   get 'users/login' => 'users#signin'
-  post 'users' => 'users#login'
+  post 'users/login' => 'users#login'
   delete 'users' => 'users#logout'
+  post 'users' => 'users#create'
 
   get 'packages' => 'packages#index'
   post 'packages' => 'packages#checkout'
+  get 'packages/cart' => 'packages#cart'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
