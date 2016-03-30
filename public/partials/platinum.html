@@ -9,7 +9,7 @@
 	</ul>
 	<p>Price: $289</p>
 	<form action="/packages" method="post">
-		<%= token_tag nil %>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 		<input type="hidden" name="package" value="platinm">
 		<input type="hidden" name="price" value=289>
 		<input type="submit" value="Purchase">
