@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'video#index'
 
+  get '/room' => 'video#room'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
