@@ -1,0 +1,27 @@
+<form>
+	Enter your room name: <input type='text' name='room[name]'>
+	<%= button_to "Enter", action="room" %>
+</form>
+
+<script>
+$roomField = $("#room_name");
+  var redirectToRoom = function(event) {
+    if (event.type === "click"){
+      if ($roomField.val() === ""){
+        alert("You have to set the name of the ROOM");
+      }else{
+        window.location = window.location.pathname + $roomField.val();
+      }
+    } else if (event.type === "keypress"){
+      if (event.keyCode === 13){
+        if ($roomField.val() === ""){
+          alert("You have to set the name of the ROOM");
+        } else {
+          window.location = window.location.pathname + $roomField.val();
+        }
+      }
+    }
+  }
+$("#room_name").on("keypress", redirectToRoom);
+$("#btn-room").on("click", redirectToRoom);
+</script>
