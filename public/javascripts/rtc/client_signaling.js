@@ -1,4 +1,5 @@
-var socket = io.connect('104.62.28.68:3000');
+// var socket = io.connect('104.62.28.68:2016');
+var socket = io.connect('71.84.207.130:2016');
 
 // var room = "room-name" //prompt("Enter room name:");
 var room = window.location.pathname.replace("/", "");
