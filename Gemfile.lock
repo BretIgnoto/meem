@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.5)
       execjs
@@ -62,6 +63,9 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -81,10 +85,15 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     nokogiri (1.6.7.2-x64-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    opentok (2.3.4)
+      activesupport (>= 2.0)
+      addressable (~> 2.3)
+      httparty (~> 0.13.1)
     pg (0.18.4)
     pg (0.18.4-x64-mingw32)
     rack (1.6.4)
@@ -172,6 +181,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  opentok
   pg (~> 0.15)
   rails (= 4.2.6)
   rails-footnotes
