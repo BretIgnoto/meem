@@ -1,6 +1,9 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
 <p><%=@user.first_name%></p>
 <p><%=@user.last_name%></p>
 <p><%=@user.email%></p>
 <p><%=@user.package%> Package</p>
+
+<% if @user.chat!=nil %>
+	<p>You video session has started:</p>
+	 <a href="<%=@user.chat.link%>">Link</a>
+<% end %>

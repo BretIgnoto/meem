@@ -6,6 +6,8 @@ class RoomsController < ApplicationController
   def index
   	@rooms = Room.where(:public => true).order("created_at DESC")
     @new_room = Room.new
+    @users = User.all
+    @links = Chat.all
   end
 
   def create
