@@ -8,6 +8,19 @@
     <%= f.submit %>
 <% end %>
 </fieldset>
+<div>
+  <form action="/chats" method="post">
+    <%= token_tag nil %>
+    <label>Person to chat with:</label>
+    <select name="user">
+      <% @users.each do |u| %>
+        <option value="<%=@user.id%>"><%=@user.first_name%> <%=@user.last_name%></option>   
+      <% end %>
+    </select>
+    <label>Link to chat:</label>
+    <input type="text" name="link">
+  </form>
+</div>
 </div>
 
 <fieldset>
