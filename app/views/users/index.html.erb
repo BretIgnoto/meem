@@ -1,13 +1,14 @@
-<h1>Welcome</h1>
-
-<h3>Login</h3>
+<h1>Welcome to MeeM</h1>
+<h2>Your go to app for career advisement</h2>
+<div class="login_page">
 <form action="/users/login" method="post">
 	<%= token_tag nil %>
-	<label>Email:</label>
-	<input type="text" name="email">
-	<label>Password:</label>
-	<input type="password" name="password">
+	<label>Email:</label></br>
+	<input type="text" name="email"></br>
+	<label>Password:</label></br>
+	<input type="password" name="password"></br>
 	<input type="submit" value="Login">
 </form>
+</div>
 
 <a href="/packages">View Packages</a>
