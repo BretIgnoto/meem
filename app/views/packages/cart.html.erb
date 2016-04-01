@@ -1,17 +1,17 @@
 <h3>Purchase</h3>
 <form action="/users" method="post">
 	<%= token_tag nil %>
-	<label>First Name:</label>
-	<input type="text" name="user[first_name]">
-	<label>Last Name:</label>
-	<input type="text" name="user[last_name]">
-	<label>Email:</label>
-	<input type="text" name="user[email]">
-	<label>Password:</label>
-	<input type="password" name="user[password]">
-	<label>Password Confirmation:</label>
-	<input type="password" name="user[password_confirmation]">
+	<label>First Name:</label><br />
+	<input type="text" name="user[first_name]"><br />
+	<label>Last Name:</label><br />
+	<input type="text" name="user[last_name]"><br />
+	<label>Email:</label><br />
+	<input type="text" name="user[email]"><br />
+	<label>Password:</label><br />
+	<input type="password" name="user[password]"><br />
+	<label>Password Confirmation:</label><br />
+	<input type="password" name="user[password_confirmation]"><br />
 	<label>Package:</label> <%=session[:package]%>
-	<label>Price:</label> $<%=session[:price]%>.00
+	<label>Price:</label> $<%=session[:price]%>.00<br />
 	<input type="submit" value="Continue to Checkout">
 </form>

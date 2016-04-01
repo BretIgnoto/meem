@@ -1,14 +1,14 @@
 <form action="/users/<%=@user.id%>" method="post">
   <%= token_tag nil %>
   <input type="hidden" name="_method" value="patch">
-  <label>First Name:</label>
-  <input type="text" name="user[first_name]" value="<%=@user.first_name%>">
-  <label>Last Name:</label>
-  <input type="text" name="user[last_name]" value="<%=@user.last_name%>">
-  <label>Email:</label>
-  <input type="text" name="user[email]" value="<%=@user.email%>">
+  <label>First Name:</label><br />
+  <input type="text" name="user[first_name]" value="<%=@user.first_name%>"><br />
+  <label>Last Name:</label><br />
+  <input type="text" name="user[last_name]" value="<%=@user.last_name%>"><br />
+  <label>Email:</label><br />
+  <input type="text" name="user[email]" value="<%=@user.email%>"><br />
   <label>Package:</label><%=session[:package]%>
-  <label>Price:</label><%=session[:price]%>
+  <label>Price:</label><%=session[:price]%><br />
   <input type="submit" value="Edit Profile">
 </form>
 
