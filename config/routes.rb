@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # root 'rooms#index'
+  get 'rooms/index' => 'rooms#index'
+  resources :rooms
+
+  get 'party/:id' => 'rooms#party'
+
   resources :charges
 
   root 'users#index'
