@@ -8,21 +8,39 @@
     <%= f.submit %>
 <% end %>
 </fieldset>
+</div>
 <div>
   <form action="/chats" method="post">
     <%= token_tag nil %>
     <label>Person to chat with:</label>
     <select name="user">
       <% @users.each do |u| %>
-        <option value="<%=@user.id%>"><%=@user.first_name%> <%=@user.last_name%></option>   
-      <% end %>
+        <option value="<%=u.id%>"><%=u.first_name%> <%=u.last_name%></option>   
+      <% end %> 
     </select>
     <label>Link to chat:</label>
     <input type="text" name="link">
+    <input type="submit">
   </form>
 </div>
-</div>
-
+<% if @links.empty? == false %>
+  <div>
+    <p>Chat links already open:</p>
+    <table>
+      <% @links.each do |l| %>
+      <tr>
+        <td><%=l.user.first_name%> <%=l.user.last_name%></td>
+        <td><form action="/chats/<%=l.id%>" method="post">
+        <%= token_tag nil %>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+        </form></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+<br />
 <fieldset>
   <legend>Existing party rooms</legend>
   <table cellpadding="2" cellspacing="5">
