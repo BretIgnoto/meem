@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_one :chat
 
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
   validates :password_confirmation, :password, presence: true, on: :create
