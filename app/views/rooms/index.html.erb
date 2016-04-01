@@ -3,25 +3,17 @@
     <legend>Start a new party room</legend>
 <%= form_for(@new_room) do |f| %>
     Party Name: <%= f.text_field :name %><br/><br/>
-    <%= f.submit %>
-<% end %>
-</fieldset>
-</div>
-
-<div>
-  <form action="/chats" method="post">
-    <%= token_tag nil %>
     <label>Person to chat with:</label>
     <select name="user">
       <% @users.each do |u| %>
         <option value="<%=u.id%>"><%=u.first_name%> <%=u.last_name%></option>   
       <% end %> 
     </select>
-    <label>Link to chat:</label>
-    <input type="text" name="link">
-    <input type="submit">
-  </form>
+    <%= f.submit %>
+<% end %>
+</fieldset>
 </div>
+
 <% if @links.empty? == false %>
   <div>
     <p>Chat links already open:</p>

@@ -19,6 +19,7 @@ class RoomsController < ApplicationController
 
   	respond_to do |format|
   		if @new_room.save
+        Chat.create(link: "192.168.7.55:3000/party/"+@new_room.id.to_s, user_id:params[:user])
   			format.html { redirect_to("/party/"+@new_room.id.to_s) }
   		else
   			format.html { render :controller => 'rooms', :action => 'index' }
